@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.container {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #444444;
+}
+li{
+    list-style: none;
+}
+.header {
+    margin: 8px;
+}
+
+.shop_icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    /* background-color: aqua; */
+}
+
+.wangwang_icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    /* background-color: aqua; */
+}
+
+.icons img {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    /* background-color: aqua; */
+    margin-right: 4px;
+}
+.shop .id{
+    display: none;
+}
+.shop li{
+    padding-left: 10px;
+    margin-top: 10px;
+    height: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 2px solid #ccc;
+}
+.shop li input{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+.shop li .price{
+    margin-left: 10px;
+    font-size: 20px;
+}
+.price del{
+    color: #999;
+}
+.shop li .pic{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+.shop li .pic img{
+    width: 80px;
+    height: 80px;
+}
+.shop li p{
+    margin-left: 20px;
+    font-size: 16px;
+}
+.shop .change_item{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.change_item li input{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+.shop .add,
+.shop .del{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #cccccc;
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+}
+.operator a{
+    color: #000;
+}
+.checkout {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.checkout input{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+.total_price,
+.xj{
+    font-size: 20px;
+    font-weight: 700;
+    color: red;
+}
+

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box2{
+            position: relative;
+        }
+        .user_msg{
+            position: absolute;
+            right: 15px;
+            top: 75px;
+            display: none;
+        }
+        .psd_query{
+            position: absolute;
+            right: 118px;
+            bottom: 60px;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-image: url('./images/1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            flex: 1;
+            align-items: center;
+        }
+        span{
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            font-weight: 100;
+        }
+        input{
+            background-color: transparent;
+            width: 320px;
+            padding: 2px;
+            text-indent: 2px;
+            color: white;
+            font-size: 20px;
+            height: 45px;
+            margin: 30px 30px 30px 5px;
+            outline: none;
+            border: 0;
+            border-bottom: 1px solid rgb(131, 220, 255);
+        }
+        input::placeholder{
+            color: #0000ff;
+            font-weight: 100;
+            font-size: 18px;
+            font-style: italic;
+        }
+        .box1{
+            text-align: center;
+            margin: 0 auto;
+            width: 600px;
+            height: 520px;
+            background-color: rgba(87, 86, 86, 0.2);
+            border-radius: 25px;
+        }
+        .box2{
+            padding: 28px;
+        }
+        .box3{
+            background-color: rgba(255, 255, 255, 0.582);
+            border: 1px solid rgb(190, 225, 255);
+            padding: 10px;
+            width: 240px;
+            height: 60px;
+            border-radius: 30px;
+            font-size: 30px;
+            color: rgb(0, 0, 0);
+            font-weight: 100;
+            margin-top: 15px;
+        }
+    </style>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box1">
+        <h1>登陆</h1>
+        <div class="box2">
+            <span>账号：</span>
+            <input type="text" placeholder="请输入账号" class="ipt">
+            <p class="user_msg">
+                <img src="./images/right.png" alt="">
+                <span>账号正确</span>
+            </p>
+            <br>
+            <span>密码：</span>
+            <input type="password" placeholder="请输入密码" class="pwd">
+            <a class="psd_query"><img src="./images/close.png" alt=""></a>
+        </div>
+        <div class="btn">
+            <button class="box3">登录</button>
+        </div>
+    </div>
+
+    <script>
+        //账号验证（11位数字以内）
+        let flag;
+        $('.ipt').on('blur',function () {
+            let username = $(this).val().trim();
+            flag = true;
+            if (username.length > 11 || username === '') flag = false;
+            else {
+                for (let i = 0; i < username.length; i++) {
+                    if (username[i] > '9' || username[i] < '0'){
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            let img;
+            let msg;
+            if (flag){
+                img = './images/right.png';
+                msg = '账号格式正确';
+            }
+            else{
+                img = './images/wrong.png';
+                msg = '账号格式错误';
+            }
+            $('.user_msg').css('display','block');
+            $('.user_msg').children('img').prop("src",img);
+            $('.user_msg').children('span').text(msg);
+
+        })
+        //密码展现
+        $('.psd_query').click(function () {
+            let pwd = $('.pwd')
+            let img = $(this).children();
+            if (pwd.prop('type') === 'text'){
+                img.prop('src','./images/close.png');
+                pwd.prop('type','password')
+            }else{
+                img.prop('src','./images/open.png');
+                pwd.prop('type','text');
+            }
+        })
+        //登录
+        $('.box3').click(function () {
+            if (flag)  location.href = 'Shopping.html';
+            else alert('账号格式错误');
+
+        });
+
+    </script>
+</body>
+</html>
+
